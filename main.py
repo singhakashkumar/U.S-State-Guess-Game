@@ -33,10 +33,7 @@ while score < 50:
 if len(guessed_states) == 50:
     screen.title('Guessed all correct!')
 else:
-    states_to_learn = []
-    for state in states:
-        if state not in guessed_states:
-            states_to_learn.append(state)
+    states_to_learn = [state for state in states if state not in guessed_states]
     data_dict = {
         'state': states_to_learn
     }
